@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>   
+</head>
+<body>
+    
+    <div class="container">
+        <br>
+        <div class="card">
+            <div class="card-header">
+                <h1>Cadastro</h1>
+            </div>
+
+            <div class="card-body">
+                <form>
+                    <label for="nome">Nome</label>
+                    <input required class="form-control" type="text" id="nome" placeholder="Digite o seu nome aqui!">
+                    <label for="nome">Email</label>
+                    <input required class="form-control" type="email" id="email" placeholder="Digite o seu email aqui!">
+                    <label for="nome">Senha</label>
+                    <div class="input-group">
+                        <input required class="form-control" type="password" id="senha" placeholder="Digite a sua senha aqui!">
+                        <button id="btn" type="button" class="input-group-text"><img id="olho" height="20" width="20" src="/img/show.png"></button>
+                    </div>
+
+                    <label>Sexo</label>
+                    <div>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="sexo" value="masculino">Masculino
+                        </label>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="sexo" value="feminino">Feminino
+                        </label>
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="sexo" value="outros">Outros
+                        </label>
+                    </div>
+
+                    <button class="btn btn-primary mt-2" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script>
+    let btn = document.getElementById("btn")
+
+    btn.addEventListener("click", () => {
+        let senha = document.getElementById("senha")
+        let olho = document.getElementById("olho")
+
+        if(senha.type == "password") {
+            senha.type = "text"
+            olho.src = "/img/hide.png"
+        } else {
+            senha.type = "password"
+            olho.src = "/img/show.png"
+        }
+    })
+</script>
+
+</html>
